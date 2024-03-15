@@ -9,16 +9,17 @@ print(f"\tRendimento diário")
 while True:
   try:
     peso = float(input(f"\nDigite o peso total de peixes: "))
-    multa = (peso-50)*4
-    excesso = peso - 50 
+    excesso = max(0, peso - 50) 
+    multa = excesso*4
+    
     print(f"Total excedente  = {excesso:.2f}KG")
     print(f"Total a ser pago = R${multa:.2f}")
 
 
     choice = input("\nDesejar calcular novamente?\n[SIM/NÃO]: ")
-    if choice == "SIM":
+    if choice.upper() == "SIM":
       continue
-    elif choice == "NÃO":
+    elif choice.upper() == "NÃO" or "NAO":
       print("\n\tAté mais!!!")
       break
     else:
