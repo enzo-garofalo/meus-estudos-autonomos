@@ -39,7 +39,7 @@ while True:
     else:
       print("\n\tEscolha incorreta!\n\tSistema interrompido!")
       break
-
+  
   except ValueError:
     print("Valores digitados incorretamente, Tente novamente!")
     continue
