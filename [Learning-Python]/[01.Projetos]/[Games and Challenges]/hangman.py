@@ -9,6 +9,7 @@ def def_palavras_secretas():
     "karim benzema", "eden hazard", "paul pogba","pele", "diego maradona", "johan cruyff", 
     "beckenbauer", "michel platini","di stefano", "zlatan ibrahimovic", "puskas",
     "xavi", "iniesta","ronaldo", "garrincha", "paolo maldini", "zinedine zidane", "renato augusto"
+        "paçoca", "banana", "cachaça", "capitalismo", "python", "picole", "abobora", "coelho", "sauna", "oculos", "fisiculturismo"
     ]
     palavra = random.choice(palavras_secretas)  # Escolha aleatória da palavra
     palavra = list(palavra)  # Converte a palavra em uma lista de caracteres
@@ -16,7 +17,7 @@ def def_palavras_secretas():
 
 # Função para perguntar ao jogador se deseja jogar novamente
 def jogar_novamente():
-    choice = input("\nDesejar jogar novamente?\n[SIM/NÃO]: ").upper()  # Entrada do jogador em maiúsculas
+    choice = input("\nDeseja jogar novamente?\n[SIM/NÃO]: ").upper()  # Entrada do jogador em maiúsculas
 
     # Verifica a escolha do jogador e decide se deve jogar novamente ou sair
     if choice == "SIM":
