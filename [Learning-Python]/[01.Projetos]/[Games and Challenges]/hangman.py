@@ -3,14 +3,8 @@ import random
 # Função para escolher uma palavra aleatória da lista de palavras secretas
 def def_palavras_secretas():
     palavras_secretas =  [
-    "lionel messi", "cristiano ronaldo", "neymar", "kylian mbappe", "robert lewandowski",
-    "kevin de bruyne", "sergio ramos", "virgil van dijk", "mohamed salah", "sadio mane", "vinicius junior"
-    "harry kane", "antoine griezmann", "luka modric", "sergio aguero", "luis suarez",
-    "karim benzema", "eden hazard", "paul pogba","pele", "diego maradona", "johan cruyff", 
-    "beckenbauer", "michel platini","di stefano", "zlatan ibrahimovic", "puskas",
-    "xavi", "iniesta","ronaldo", "garrincha", "paolo maldini", "zinedine zidane", "renato augusto"
-    "paçoca", "banana", "cachaça", "capitalismo", "python", "picole", "abobora", "coelho", "sauna", 
-    "oculos", "fisiculturismo"
+     "banana", "cachaça", "capitalismo", "python", "picole", "abobora", "coelho", "sauna", 
+    "oculos", "fisiculturismo", "bom dia"
     ]
     palavra = random.choice(palavras_secretas)  # Escolha aleatória da palavra
     palavra = list(palavra)  # Converte a palavra em uma lista de caracteres
@@ -34,8 +28,14 @@ def forca():
     digitadas = []  # Lista para armazenar letras já digitadas
 
     palavra_secreta = def_palavras_secretas() # Chama a função para escolher uma palavra secreta aleatória
-    palavra_print = ["-" if letra != " " else " " for letra in palavra_secreta]  # Lista para armazenar letras reveladas e traços
-
+    
+    # Esconde palavra secreta o ultilizar um for.
+    palavra_print = []
+    for letra in palavra_secreta:
+        if letra != " ":
+            palavra_print.append("-")
+        else: 
+            palavra_print.append(" ")
     # Loop principal do jogo
     while tentativas > 0 and "-" in palavra_print:
         try:
