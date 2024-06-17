@@ -1,6 +1,7 @@
 from flask import render_template, request, redirect, session, flash, url_for, send_from_directory
 from jogoteca import app, db
 from models import Jogos, Usuarios
+from helpers import recupera_imagem
 
 # Define Rota
 @app.route('/')
@@ -24,7 +25,8 @@ def editar(id):
     return redirect(url_for('login', proxima=url_for('editar')))
   
   jogo = Jogos.query.filter_by(id=id).first()
-  return render_template('editar.html', titulo='Editando Jogo', jogo=jogo)
+  capa_jogo = recupera_imagem(id)
+  return render_template('editar.html', titulo='Editando Jogo', jogo=jogo, capa_jogo=capa_jogo)
 
 @app.route('/atualizar', methods=['POST',])
 def atualizar():
@@ -35,6 +37,10 @@ def atualizar():
   
   db.session.add(jogo)
   db.session.commit()
+
+  arquivo = request.files['arquivo']
+  upload_path = app.config['UPLOAD_PATH']
+  arquivo.save(f'{upload_path}/capa{jogo.id}.jpg')
 
   return redirect(url_for('index'))
 
@@ -48,7 +54,6 @@ def deletar(id):
   flash('Jogo Deletado com sucesso!')
 
   return redirect(url_for('index'))
-
 
 @app.route('/criar', methods=['POST',])
 def criar():
@@ -101,3 +106,4 @@ def logout():
 @app.route('/uploads/<nome_arquivo>')
 def imagem(nome_arquivo):
   return send_from_directory('uploads', nome_arquivo)
+
