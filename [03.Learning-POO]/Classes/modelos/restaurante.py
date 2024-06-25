@@ -1,3 +1,4 @@
+from modelos.cardapio.item_cardapio import ItemCardapio
 from modelos.avaliacao import Avaliacao
 
 class Restaurante:
@@ -10,6 +11,7 @@ class Restaurante:
       self._capacidade = capacidade
       self._avaliacao = []
       self._ativo = False
+      self._cardapio = []
 
       Restaurante.restaurantes.append(self)
    # STR é uma maneira de retornar o objeto em formato de texto
@@ -25,6 +27,17 @@ class Restaurante:
      for restaurante in cls.restaurantes:
         print(restaurante)
 
+   @property
+   def consultar_cardapio(self):
+      print(f'\n\tCardapio do {self._nome}\n'+'-'*40)
+      for i, item in enumerate(self._cardapio, start=1):
+         if hasattr(item, '_descricao'):
+            mensagem_prato = f'{i}. Nome: {item._nome}\n   -Preco: R$ {item._preco}\n   -Descrição: {item._descricao}'
+            print(mensagem_prato)
+         else:
+            mensagem_bebida = f'{i}. Nome: {item._nome}\n   -Preco: R$ {item._preco}\n   -Tamanho: {item._tamanho}'
+            print(mensagem_bebida)
+         print('-'*40)
    #Muda como o atributo vai ser lido/impresso, poderia fazer cálculos aqui   
    @property
    def ativo(self):
@@ -47,3 +60,8 @@ class Restaurante:
       qtd_de_notas = len(self._avaliacao)
       media = round(soma_das_notas/qtd_de_notas, 1)
       return media
+
+   def adicionar_no_cardapio(self, objeto):
+      # isinstance verifica se ela derivação da classe mãe
+      if isinstance(objeto, ItemCardapio):
+         self._cardapio.append(objeto)

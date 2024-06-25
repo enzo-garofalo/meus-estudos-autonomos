@@ -5,12 +5,15 @@ def main():
     carro1 = Carro('Honda', 'Honda Fit', 4)
     carro2 = Carro('Fiat', 'Uno', 2)
     carro3 = Carro('Hyundai', 'Azeera', 4)
-
-    print(carro1)
+    moto1 = Moto("Harley-Davidson", "Street 750", "Esportiva")
+    moto2 = Moto("Honda", "CB 500", "Casual")
+    moto3 = Moto("Yamaha", "MT-09", "Esportiva")
+    
+    print(moto1)
     print('-'*20)
-    print(carro2)
+    print(moto2)
     print('-'*20)
-    print(carro3)
+    print(moto3)
 
 
 

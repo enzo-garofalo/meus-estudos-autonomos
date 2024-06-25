@@ -7,3 +7,6 @@ class Prato(ItemCardapio):
       self._descricao = descricao
       # Com isso é permitido acessar as informações de outra classe
       super().__init__(nome, preco)
+   
+   def aplicar_desconto(self):
+      self._preco -= (self._preco*0.05)
