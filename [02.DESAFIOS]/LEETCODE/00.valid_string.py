@@ -10,14 +10,23 @@ import re
 
 
 def isValid(s):
-    abre = {'[':']', '(':')', '{':'}'}
+    pairs = {'[':']', 
+             '(':')', 
+             '{':'}'}
+
+    expected = []
     for letra in s:
-        if letra in abre.keys():
-            if abre[letra] not in s:
+        if letra in pairs.keys():
+            expected.append(pairs[letra])
+            if pairs[letra] not in s:
                 return False
+        elif len(expected) == 0:
+            return False
+        elif letra != expected.pop():
+            return False
+    if len(expected) > 0:
+        return False
     return True
 
-
-
-s = '(]'
+s = '[[[]'
 print(isValid(s))
