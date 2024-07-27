@@ -16,4 +16,13 @@ def twoSum(nums, target):
             if (first + second) == target and i_second not in seen.keys():
                 return[i_first, i_second]
 
-print(twoSum(nums, target))
+def other_solution(nums, target):
+    seen = {}
+    for i, num in enumerate(nums):
+        if target - num in seen:
+            return [seen[target-num], i]
+        
+        seen[num] = i
+
+print(other_solution(nums, target))
+
