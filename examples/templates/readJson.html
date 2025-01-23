@@ -1,0 +1,54 @@
+{% extends "_base.html" %}
+
+{% block title %}JSON Data{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-center">JSON Data Overview</h2>
+    
+    <div class="card mb-3">
+        <div class="card-header bg-primary text-white">Versions</div>
+        <div class="card-body">
+            <p><strong>Archive:</strong> {{ data.SIMCARR.versions.archive }}</p>
+            <p><strong>Program:</strong> {{ data.SIMCARR.versions.program }}</p>
+        </div>
+    </div>
+    
+    <div class="card mb-3">
+        <div class="card-header bg-secondary text-white">Well Identification</div>
+        <div class="card-body">
+            <p><strong>Name:</strong> {{ data.SIMCARR.wellIdentification.name }}</p>
+            <p><strong>Rig:</strong> {{ data.SIMCARR.wellIdentification.rig }}</p>
+            <p><strong>Date:</strong> {{ data.SIMCARR.wellIdentification.date }}</p>
+        </div>
+    </div>
+    
+    <div class="card mb-3">
+        <div class="card-header bg-info text-white">MPD Details</div>
+        <div class="card-body">
+            <p><strong>Type:</strong> {{ data.SIMCARR.mpd.type }}</p>
+            <p><strong>Delta P Choke:</strong> {{ data.SIMCARR.mpd.deltaPChoke }}</p>
+        </div>
+    </div>
+    
+    <h3 class="text-center">Well Path Trajectory</h3>
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>Measured Depth</th>
+                <th>Inclination</th>
+                <th>Azimuth</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in data.SIMCARR.wellpath.trajectoryItem %}
+            <tr>
+                <td>{{ item.measuredDepth }}</td>
+                <td>{{ item.inclination }}</td>
+                <td>{{ item.azimuth }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
