@@ -1,0 +1,3 @@
+/home/enzo/documents/MySharedLibrary/AbstractClass/Shapes/build/CMakeFiles/MAIN.dir
+/home/enzo/documents/MySharedLibrary/AbstractClass/Shapes/build/CMakeFiles/edit_cache.dir
+/home/enzo/documents/MySharedLibrary/AbstractClass/Shapes/build/CMakeFiles/rebuild_cache.dir

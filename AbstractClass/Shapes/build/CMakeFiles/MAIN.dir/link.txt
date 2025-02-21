@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/MAIN.dir/main.cpp.o CMakeFiles/MAIN.dir/shapes.cpp.o CMakeFiles/MAIN.dir/shapesDTO.cpp.o -o MAIN 

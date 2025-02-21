@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/home/enzo/documents/MySharedLibrary/AbstractClass/Shapes/build",
+  "command": "/usr/bin/g++  -I/home/enzo/documents/MySharedLibrary/AbstractClass/Shapes -g -std=gnu++11 -o CMakeFiles/MAIN.dir/main.cpp.o -c /home/enzo/documents/MySharedLibrary/AbstractClass/Shapes/main.cpp",
+  "file": "/home/enzo/documents/MySharedLibrary/AbstractClass/Shapes/main.cpp",
+  "output": "CMakeFiles/MAIN.dir/main.cpp.o"
+},
+{
+  "directory": "/home/enzo/documents/MySharedLibrary/AbstractClass/Shapes/build",
+  "command": "/usr/bin/g++  -I/home/enzo/documents/MySharedLibrary/AbstractClass/Shapes -g -std=gnu++11 -o CMakeFiles/MAIN.dir/shapes.cpp.o -c /home/enzo/documents/MySharedLibrary/AbstractClass/Shapes/shapes.cpp",
+  "file": "/home/enzo/documents/MySharedLibrary/AbstractClass/Shapes/shapes.cpp",
+  "output": "CMakeFiles/MAIN.dir/shapes.cpp.o"
+},
+{
+  "directory": "/home/enzo/documents/MySharedLibrary/AbstractClass/Shapes/build",
+  "command": "/usr/bin/g++  -I/home/enzo/documents/MySharedLibrary/AbstractClass/Shapes -g -std=gnu++11 -o CMakeFiles/MAIN.dir/shapesDTO.cpp.o -c /home/enzo/documents/MySharedLibrary/AbstractClass/Shapes/shapesDTO.cpp",
+  "file": "/home/enzo/documents/MySharedLibrary/AbstractClass/Shapes/shapesDTO.cpp",
+  "output": "CMakeFiles/MAIN.dir/shapesDTO.cpp.o"
+}
+]
